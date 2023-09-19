@@ -9,6 +9,7 @@ shop_router = Router()
 @shop_router.message(Command("shop"))
 async def shop(message: types.Message):
     kb = ReplyKeyboardMarkup(
+<<<<<<< HEAD
         keyboard=[
             [
             KeyboardButton(text="Манга"),
@@ -21,6 +22,13 @@ async def shop(message: types.Message):
         request_location=True)]
 
         ]
+=======
+        keyboard=[[
+            KeyboardButton(text="Манга"),
+            KeyboardButton(text="Книги"),
+            KeyboardButton(text="Комиксы")
+        ]]
+>>>>>>> 2020f770811ad87bd7893a1ada5f3101a482d855
     )
     await message.answer("Выберите категорию ниже:", reply_markup=kb)
 
