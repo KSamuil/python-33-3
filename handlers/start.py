@@ -1,7 +1,7 @@
 from aiogram import types, Router, F
 from aiogram.filters import Command
 from aiogram.types.inline_keyboard_button import InlineKeyboardButton as IButton
-from  aiogram.types.inline_keyboard_markup import InlineKeyboardMarkup
+from aiogram.types.inline_keyboard_markup import InlineKeyboardMarkup
 import random
 import os
 
@@ -12,8 +12,7 @@ async def start(message: types.Message):
     kb = InlineKeyboardMarkup(
         inline_keyboard=[
             [IButton(text="Наш сайт", url="https://google.com"),
-             IButton(text="Наш сайт", url="https://instagram.com"),
-            ],
+             IButton(text="Наш инстограмм", url="https://instagram.com")],
             [
                 IButton(text="О нас", callback_data="about")
             ]
@@ -23,7 +22,7 @@ async def start(message: types.Message):
 
 @start_router.callback_query(F.data == "about")
 async def about(callback: types.CallbackQuery):
-    await  callback.answer()
+    await callback.answer()
     await callback.message.answer("О нас")
 
 @start_router.message(Command("photo"))
