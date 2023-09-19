@@ -1,6 +1,7 @@
 import asyncio
 import logging
 from bot import bot, dp
+<<<<<<< HEAD
 
 from handlers import (start_router,
                       echo_router,
@@ -9,6 +10,11 @@ from handlers import (start_router,
                       )
 from aiogram.types import BotCommand
 
+=======
+from handlers import (
+    start_router, echo_router, shop_router
+)
+>>>>>>> 2020f770811ad87bd7893a1ada5f3101a482d855
 
 async def main():
     # bot.set_my_commands(
@@ -19,7 +25,10 @@ async def main():
     # )
     dp.include_router(start_router)
     dp.include_router(shop_router)
+<<<<<<< HEAD
     dp.include_router(questions_router)
+=======
+>>>>>>> 2020f770811ad87bd7893a1ada5f3101a482d855
     dp.include_router(echo_router)
 
     await dp.start_polling(bot)

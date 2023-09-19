@@ -72,3 +72,6 @@ async def process_gender(message: Message, state: FSMContext):
                          f"Пол: {data['gender']}",
                          reply_markup=ReplyKeyboardRemove())
     await state.finish()
+
+
+
